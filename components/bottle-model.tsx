@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useRef, useState, useEffect } from "react";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import * as THREE from "three";
 
 export function BottleModel({
@@ -11,17 +11,33 @@ export function BottleModel({
   scrollProgress: number;
 }) {
   const groupRef = useRef<THREE.Group>(null);
-  const gltf = useGLTF("/marzen.glb");
-  const scene = gltf.scene;
-  console.log("[v0] GLB loaded, scene children:", scene.children.length, "animations:", gltf.animations?.length);
+  const [scene, setScene] = useState<THREE.Group | null>(null);
+
+  useEffect(() => {
+    const loader = new GLTFLoader();
+    console.log("[v0] Starting GLB load from /marzen.glb");
+    loader.load(
+      "/marzen.glb",
+      (gltf) => {
+        console.log("[v0] GLB loaded successfully, children:", gltf.scene.children.length);
+        setScene(gltf.scene);
+      },
+      (progress) => {
+        console.log("[v0] GLB loading progress:", Math.round((progress.loaded / (progress.total || 1)) * 100) + "%");
+      },
+      (error) => {
+        console.log("[v0] GLB load error:", error);
+      }
+    );
+  }, []);
 
   useFrame(() => {
     if (!groupRef.current) return;
-    // Gentle continuous rotation + scroll-driven Y rotation
     groupRef.current.rotation.y = scrollProgress * Math.PI * 4;
-    // Slight bob based on scroll
     groupRef.current.position.y = Math.sin(scrollProgress * Math.PI * 2) * 0.1;
   });
+
+  if (!scene) return null;
 
   return (
     <group ref={groupRef} dispose={null}>
@@ -29,5 +45,3 @@ export function BottleModel({
     </group>
   );
 }
-
-useGLTF.preload("/marzen.glb");
