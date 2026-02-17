@@ -1,0 +1,2 @@
+import{j as u}from"./jsx-runtime-D_zvdyIk.js";import{r as e}from"./chunk-EPOLDU6W-CsjFHsfv.js";const s=77,i=e.createContext({headerHeight:s,setHeaderHeight:()=>{},isMobileSearchActive:!1,setIsMobileSearchActive:()=>{}});function H(){return e.useContext(i)}function S({children:o}){const[t,r]=e.useState(s),[a,n]=e.useState(!1),c=e.useMemo(()=>({headerHeight:t,setHeaderHeight:r,isMobileSearchActive:a,setIsMobileSearchActive:n}),[t,a]);return u.jsx(i.Provider,{value:c,children:o})}export{S as N,H as u};
+//# sourceMappingURL=NavigationUIStateProvider-BhdZSnEK.js.map

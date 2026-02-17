@@ -1,0 +1,1 @@
+import{j as s}from"./components-SUEAusaj.js";import{M as n}from"./Money-G02N00Gy.js";function x({price:a,compareAtPrice:d,className:r}){return s.jsx("div",{className:r,children:d?s.jsxs("div",{className:"product-price-on-sale",children:[a?s.jsx(n,{data:a}):null,s.jsx("s",{children:s.jsx(n,{data:d})})]}):a?s.jsx(n,{data:a}):s.jsx("span",{children:" "})})}export{x as P};

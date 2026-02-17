@@ -1,0 +1,2 @@
+import{u as n,r as o}from"./chunk-EPOLDU6W-CsjFHsfv.js";import{A as u}from"./ApolloLink-CCPdz4g9.js";let t;const l=()=>{const r=n("root"),e=r==null?void 0:r.flags;return o.useEffect(()=>{if(e)return t=e==null?void 0:e.sessionConsistentFeatures,()=>{t=void 0}},[e]),null},c=new u((r,e)=>(r.setContext(s=>{const a={...s.headers??{}};return t!==void 0&&(a["X-Features"]=t),{...s,headers:a}}),e(r)));export{l as F,c as f};
+//# sourceMappingURL=featureFlagLink-DPSBzg0D.js.map

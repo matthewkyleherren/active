@@ -1,0 +1,2 @@
+import{r as a}from"./chunk-EPOLDU6W-CsjFHsfv.js";import{u as s}from"./use-hydrated-Blf26p3i.js";const h=e=>{const d=s(),[i,n]=a.useState(()=>{if(!(typeof window>"u")&&window.matchMedia)return window.matchMedia(e).matches});if(a.useEffect(()=>{if(typeof window>"u"||!window.matchMedia)return;const t=window.matchMedia(e);n(t.matches);const r=o=>{n(o.matches)};return t.addEventListener("change",r),()=>{t.removeEventListener("change",r)}},[e]),!!d)return i};export{h as u};
+//# sourceMappingURL=useMediaQuery-J53b-a4d.js.map

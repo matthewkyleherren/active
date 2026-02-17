@@ -1,0 +1,2 @@
+import{j as i}from"./jsx-runtime-D_zvdyIk.js";import{r as l}from"./chunk-EPOLDU6W-CsjFHsfv.js";import{I as j}from"./index-Dmqjzgbz.js";const k=({children:t,onImpression:a,triggerOnce:r=!1,threshold:x,className:c})=>{const f=l.useCallback(e=>{e&&(a==null||a())},[a]);return i.jsx(j,{as:"div",onChange:f,triggerOnce:r,className:c,threshold:x,children:t})};export{k as T};
+//# sourceMappingURL=TrackingPixel-DFcemoD5.js.map

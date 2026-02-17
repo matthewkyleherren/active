@@ -1,0 +1,2 @@
+import{j as r}from"./jsx-runtime-D_zvdyIk.js";import{u as i,r as e,L as n}from"./chunk-EPOLDU6W-CsjFHsfv.js";import{e as m,f as u}from"./useMonorail-CKSKmKQz.js";const f=()=>{const s=m(u),{mobilePlatform:t}=i("root")||{};return s&&!t},c=e.forwardRef((s,t)=>{const o=f(),a=s.viewTransition??o;return r.jsx(n,{...s,ref:t,viewTransition:a})});c.displayName="Link";export{c as L,f as u};
+//# sourceMappingURL=Link-BAtNey3u.js.map
