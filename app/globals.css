@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", sans-serif;
+  --font-mono: "Lekton", monospace;
+
+  --color-drop: #e5e8d0;
+  --color-trail: #7b628f;
+  --color-rad: #bccc32;
+  --color-gray: color-mix(in oklab, oklch(0.928 0.006 264.531) 50%, transparent);
+
+  --text-huge: 15rem;
+  --text-huge--line-height: 0.8;
+  --text-huge--font-weight: 800;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: #fff;
+    color: #000;
+  }
+}
+
+@layer components {
+  .blurred-bg {
+    background: var(--color-gray);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+
+  .link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+
+  .link:hover {
+    opacity: 0.6;
+  }
+
+  .button-hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .button-hover:hover {
+    transform: scale(1.02);
+  }
+
+  .button-hover:active {
+    transform: scale(0.98);
+  }
+}
+
+@layer utilities {
+  .text-huge {
+    font-size: var(--text-huge);
+    line-height: var(--text-huge--line-height);
+    font-weight: var(--text-huge--font-weight);
+  }
+}
+
+/* Marquee animations */
+@keyframes marquee-normal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-normal {
+  animation: marquee-normal linear infinite;
+}
+
+.marquee-reverse {
+  animation: marquee-reverse linear infinite;
+}
+
+/* Blink animation for loader cursor */
+@keyframes blink-fast {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink-fast {
+  animation: blink-fast 0.5s step-end infinite;
+}
+
+/* Custom scrollbar hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
