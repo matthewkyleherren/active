@@ -11,7 +11,9 @@ export function BottleModel({
   scrollProgress: number;
 }) {
   const groupRef = useRef<THREE.Group>(null);
-  const { scene } = useGLTF("/marzen.glb");
+  const gltf = useGLTF("/marzen.glb");
+  const scene = gltf.scene;
+  console.log("[v0] GLB loaded, scene children:", scene.children.length, "animations:", gltf.animations?.length);
 
   useFrame(() => {
     if (!groupRef.current) return;
